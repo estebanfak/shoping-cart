@@ -19,3 +19,4 @@ Carrito:
  Repo: https://github.com/midudev/aprendiendo-react/tree/master/projects/06-shopping-cart/src
  Ejemplo: https://midu-react-06.surge.sh/
  
+ Web: 
