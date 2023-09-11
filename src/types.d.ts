@@ -1,5 +1,4 @@
 export interface Products {
-    map: any;
     products: Product[];
 }
 
