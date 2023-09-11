@@ -1,26 +1,24 @@
-import Items from './components/Items'
-import Products from './mocks/Products.json'
-import { useEffect, useState } from 'react'
+import { products as initialState } from './mocks/products.json'
 import './App.css'
-import { ItemList } from './components/ItemList'
+import { Products } from './components/Products'
+import { Header } from './components/Header'
+import { useState } from 'react'
+import { useFilter } from './hooks/useFilter'
+import { Footer } from './components/Footer'
+
 
 function App() {
+  const [products] = useState(initialState)
+  const { filterProducts, categories } = useFilter()
 
-  const [products, setProducts] = useState<any>([])
-  const [productsInitialState, setProdusctsInitialState] = useState<any>([])
-
-  useEffect(() => {
-    const prod = Products.products
-    setProducts(Products.products)
-    setProdusctsInitialState(Products.products)
-  }, [])
+  const categoriesList: any = categories(products)
+  const filteredProducts = filterProducts(products)
 
   return (
     <>
-      <h1>Shopping cart</h1>
-      <Items>
-        <ItemList list={products} />
-      </Items>
+      <Header categories={categoriesList} />
+      <Products products={filteredProducts} />
+      <Footer />
     </>
   )
 }
