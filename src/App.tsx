@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Header categories={categoriesList} />
-      <Products products={filteredProducts} />
+      <Products products={filteredProducts} map={undefined} />
       <Footer />
     </>
   )
