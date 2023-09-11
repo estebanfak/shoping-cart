@@ -1,4 +1,4 @@
-import { products as initialState } from './mocks/products.json'
+import { products as initialState } from './mocks/Products.json'
 import './App.css'
 import { Products } from './components/Products'
 import { Header } from './components/Header'
