@@ -1,4 +1,4 @@
-import { useContext, useId, useState } from "react"
+import { useContext, useId } from "react"
 import { FiltersContext } from "../context/filter"
 
 export const Filter = ({ categories }: any) => {
@@ -23,7 +23,7 @@ export const Filter = ({ categories }: any) => {
             }
         })
     }
-    
+
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
