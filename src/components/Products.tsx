@@ -1,6 +1,10 @@
+import { useCart } from '../hooks/useCart'
 import { type Product, type Products as IProducts } from '../types'
+import { AddToCartIcon, RemoveFromCartIcon } from './Icons'
 
 export const Products = ({ products }: IProducts) => {
+
+    const { cart, addToCart, removeFromCart } = useCart()
 
     return (
         <ul className="d-flex row g-5">
@@ -19,6 +23,15 @@ export const Products = ({ products }: IProducts) => {
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item" style={{ textDecoration: 'none' }}>Price: ${prod.price}</li>
                                 </ul>
+                                {
+                                    cart.some((item: any) => prod.id === item.id) ?
+                                        <button onClick={() => { removeFromCart(prod) }} style={{backgroundColor: 'red'}}>
+                                            <RemoveFromCartIcon />
+                                        </button> :
+                                        <button onClick={() => { addToCart(prod) }} style={{backgroundColor: 'blue'}}>
+                                            <AddToCartIcon />
+                                        </button>
+                                }
                             </div>
                         )
                     }) :

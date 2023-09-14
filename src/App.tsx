@@ -4,7 +4,9 @@ import { Products } from './components/Products'
 import { Header } from './components/Header'
 import { useState } from 'react'
 import { useFilter } from './hooks/useFilter'
-import { Footer } from './components/Footer'
+// import { Footer } from './components/Footer'
+import { Cart } from './components/Cart'
+import { CartProvider } from './context/cart'
 
 
 function App() {
@@ -15,11 +17,12 @@ function App() {
   const filteredProducts = filterProducts(products)
 
   return (
-    <>
+    <CartProvider>
       <Header categories={categoriesList} />
+      <Cart/>
       <Products products={filteredProducts} />
-      <Footer />
-    </>
+      {/* <Footer /> */}
+    </CartProvider>
   )
 }
 

@@ -1,13 +1,20 @@
-import { useContext } from 'react'
 import './Footer.css'
-import { FiltersContext } from '../context/filter'
+import { useCart } from '../hooks/useCart'
+import { Product } from '../types'
 
 export const Footer = () => {
-    const { filter } = useContext<any>(FiltersContext)
+    const { cart } = useCart()
+    const mostrar = cart?.map((prod: Product) => {
+        return {
+            title: prod.title,
+            price: prod.price,
+            quantity: prod.quantity
+        }
+    })
     return (
         <footer className="footer">
             {
-                JSON.stringify(filter, null, 2)
+                JSON.stringify(mostrar, null, 2)
             }
         </footer>
     )
