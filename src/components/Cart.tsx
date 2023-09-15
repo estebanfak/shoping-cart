@@ -18,7 +18,7 @@ export const Cart = () => {
 
         <aside className="cart">
             {
-                cart.length > 0 && cart.map((prod: Product) => {
+                cart?.length > 0 && cart?.map((prod: Product) => {
                     return (
                         <ul key={prod.id}>
                         <li style={{listStyle: 'none'}}>

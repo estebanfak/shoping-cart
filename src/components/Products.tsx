@@ -24,7 +24,7 @@ export const Products = ({ products }: IProducts) => {
                                     <li className="list-group-item" style={{ textDecoration: 'none' }}>Price: ${prod.price}</li>
                                 </ul>
                                 {
-                                    cart.some((item: any) => prod.id === item.id) ?
+                                    cart?.some((item: any) => prod.id === item.id) ?
                                         <button onClick={() => { removeFromCart(prod) }} style={{backgroundColor: 'red'}}>
                                             <RemoveFromCartIcon />
                                         </button> :
